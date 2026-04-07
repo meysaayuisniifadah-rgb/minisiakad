@@ -1,0 +1,22 @@
+[
+    {
+        "kode": "123",
+        "nama": "desain grafis",
+        "sks": "4"
+    },
+    {
+        "kode": "456",
+        "nama": "bahasa indonesia",
+        "sks": "20"
+    },
+    {
+        "kode": "789",
+        "nama": "manajemen pemasaran digital",
+        "sks": "22"
+    },
+    {
+        "kode": "1110",
+        "nama": "keputusan bisnis",
+        "sks": "20"
+    }
+]

@@ -146,3 +146,143 @@ td, th {
     margin: auto;
     display: block;
 }
+/* PRINT STYLE */
+@media print {
+
+    .sidebar,
+    .btn-back,
+    .btn-print {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+    .content {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid #000;
+        margin-bottom: 20px;
+    }
+
+    table {
+        box-shadow: none;
+    }
+}
+
+/* BUTTON PRINT */
+.btn-print {
+    background: #6366f1;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.btn-print:hover {
+    background: #4f46e5;
+}
+.btn-hapus {
+    background: #ef4444;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.btn-hapus:hover {
+    background: #dc2626;
+}
+/* ===== KHS DESIGN ===== */
+
+.khs-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.khs-header h2 {
+    margin: 0;
+    color: #1e293b;
+}
+
+.khs-header p {
+    color: #64748b;
+}
+
+.khs-info {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f1f5f9;
+    border-radius: 8px;
+}
+
+/* IPK BOX */
+.ipk-box {
+    margin-top: 15px;
+    padding: 15px;
+    background: #3b82f6;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* PRINT KHUSUS */
+@media print {
+    .sidebar, .btn-back, .btn-print {
+        display: none;
+    }
+
+    .card {
+        border: none;
+        box-shadow: none;
+    }
+
+    .ipk-box {
+        background: black;
+        color: white;
+    }
+}
+/* ===== LIST MAHASISWA ===== */
+
+.mhs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.mhs-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.mhs-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.mhs-avatar {
+    font-size: 22px;
+}
+
+.mhs-name {
+    font-weight: bold;
+    font-size: 16px;
+}

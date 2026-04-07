@@ -1,26 +1,53 @@
 <?php
 session_start();
 
+// tampilkan error (biar ga blank)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // proteksi login
 if(!isset($_SESSION['role'])){
     header("Location: /minisiakad/minisiakad/login.php");
     exit;
 }
 
-// data
+// file JSON
+$file = __DIR__ . "/../data/mahasiswa.json";
+
+// ambil dari JSON (AMAN)
+if(file_exists($file)){
+    $data = json_decode(file_get_contents($file), true);
+    if(is_array($data)){
+        $_SESSION['mhs'] = $data;
+    }
+}
+
+// data default
 if(!isset($_SESSION['mhs'])) $_SESSION['mhs']=[];
 
 // tambah
 if(isset($_POST['tambah'])){
     $_SESSION['mhs'][]=[
         "nama"=>$_POST['nama'],
-        "nim"=>$_POST['nim']
+        "nim"=>$_POST['nim'],
+        "jurusan"=>$_POST['jurusan'] // 🔥 tambahan
     ];
+
+    file_put_contents($file, json_encode($_SESSION['mhs'], JSON_PRETTY_PRINT));
+
+    header("Location: mahasiswa.php");
+    exit;
 }
 
 // hapus
 if(isset($_GET['hapus'])){
     unset($_SESSION['mhs'][$_GET['hapus']]);
+    $_SESSION['mhs'] = array_values($_SESSION['mhs']);
+
+    file_put_contents($file, json_encode($_SESSION['mhs'], JSON_PRETTY_PRINT));
+
+    header("Location: mahasiswa.php");
+    exit;
 }
 ?>
 
@@ -52,6 +79,16 @@ if(isset($_GET['hapus'])){
 <form method="POST">
 <input name="nama" placeholder="Nama">
 <input name="nim" placeholder="NIM">
+
+<!-- 🔥 DROPDOWN JURUSAN -->
+<select name="jurusan">
+    <option value="">-- Pilih Jurusan --</option>
+    <option value="Informatika">Informatika</option>
+    <option value="Sistem Informasi">Sistem Informasi</option>
+    <option value="Manajemen">Manajemen</option>
+    <option value="Akuntansi">Akuntansi</option>
+</select>
+
 <button name="tambah">Tambah</button>
 </form>
 
@@ -59,18 +96,26 @@ if(isset($_GET['hapus'])){
 <tr>
 <th>Nama</th>
 <th>NIM</th>
+<th>Jurusan</th> <!-- 🔥 -->
 <th>Aksi</th>
 </tr>
 
+<?php if(!empty($_SESSION['mhs'])): ?>
 <?php foreach($_SESSION['mhs'] as $i=>$m): ?>
 <tr>
 <td><?= $m['nama'] ?></td>
 <td><?= $m['nim'] ?></td>
+<td><?= $m['jurusan'] ?? '-' ?></td> <!-- 🔥 -->
 <td>
-<a href="?hapus=<?= $i ?>">Hapus</a>
+<a href="?hapus=<?= $i ?>" onclick="return confirm('Hapus data?')">Hapus</a>
 </td>
 </tr>
 <?php endforeach; ?>
+<?php else: ?>
+<tr>
+<td colspan="4">Belum ada data</td>
+</tr>
+<?php endif; ?>
 
 </table>
 
