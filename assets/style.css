@@ -1,0 +1,148 @@
+body {
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background:#f1f5f9;
+}
+
+/* layout */
+.container { display:flex; }
+
+/* sidebar */
+.sidebar {
+    width:220px;
+    height:100vh;
+    background:#1e293b;
+    color:white;
+    padding:20px;
+}
+
+.sidebar a {
+    display:block;
+    color:white;
+    padding:10px;
+    margin:5px 0;
+    text-decoration:none;
+}
+
+.sidebar a:hover {
+    background:#334155;
+}
+
+/* content */
+.content {
+    flex:1;
+    padding:20px;
+    background:white;
+    border-radius:10px;
+    margin:20px;
+    animation:fade 0.5s;
+}
+
+/* form */
+input {
+    padding:10px;
+    margin:5px;
+}
+
+/* button */
+button, a {
+    padding:8px;
+    background:#3b82f6;
+    color:white;
+    border:none;
+    border-radius:5px;
+    text-decoration:none;
+}
+
+/* table */
+table {
+    width:100%;
+    margin-top:20px;
+    border-collapse:collapse;
+}
+td, th {
+    border:1px solid #ccc;
+    padding:10px;
+}
+
+@keyframes fade {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+/* LOGIN AESTHETIC */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #3b82f6, #080a5e);
+}
+
+.login-box {
+    width: 320px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #7cabf7;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.login-box input {
+    border-radius: 8px;
+}
+
+.login-box button {
+    margin-top: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+/* ========================= */
+/* FIX ALIGN LOGIN */
+/* ========================= */
+
+/* form biar rapi tengah */
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* input full rapi */
+.login-box input {
+    width: 100%;
+}
+
+/* tombol full & sejajar */
+.login-box button {
+    width: 100%;
+}
+
+/* logo biar keliatan */
+.logo {
+    color: white !important;
+}
+
+/* subtitle lebih kontras */
+.subtitle {
+    color: #e2e8f0 !important;
+}
+
+/* judul lebih jelas */
+.login-box h2 {
+    color: black;
+}
+/* tombol lebih kecil & center */
+.login-box button {
+    width: 60%;
+    margin: auto;
+    display: block;
+}
