@@ -66,8 +66,6 @@ if(isset($_GET['hapus'])){
     <a href="/minisiakad/minisiakad/dashboard_admin.php">Dashboard</a>
     <a href="/minisiakad/minisiakad/pages/mahasiswa.php">Mahasiswa</a>
     <a href="/minisiakad/minisiakad/pages/matakuliah.php">Mata Kuliah</a>
-    <a href="/minisiakad/minisiakad/pages/nilai.php">Nilai</a>
-    <a href="/minisiakad/minisiakad/pages/khs.php">KHS</a>
     <a href="/minisiakad/minisiakad/logout.php">Logout</a>
 </div>
 

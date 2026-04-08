@@ -26,14 +26,6 @@ $nama = $_GET['mhs'] ?? '';
 function bobot($n){
     $n = trim($n);
 
-    if(is_numeric($n)){
-        if($n >= 85) return 4;
-        if($n >= 70) return 3;
-        if($n >= 60) return 2;
-        if($n >= 50) return 1;
-        return 0;
-    }
-
     $n = strtoupper($n);
     if($n=='A') return 4;
     if($n=='B') return 3;

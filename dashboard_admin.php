@@ -24,23 +24,28 @@ if(!isset($_SESSION['role']) || $_SESSION['role']!='admin'){
         <a href="/minisiakad/minisiakad/dashboard_admin.php">Dashboard</a>
         <a href="/minisiakad/minisiakad/pages/mahasiswa.php">Mahasiswa</a>
         <a href="/minisiakad/minisiakad/pages/matakuliah.php">Mata Kuliah</a>
-        <a href="/minisiakad/minisiakad/pages/nilai.php">Nilai</a>
-        <a href="/minisiakad/minisiakad/pages/khs.php">KHS</a>
         <a href="/minisiakad/minisiakad/logout.php">Logout</a>
     </div>
 
-    <!-- CONTENT -->
     <div class="content">
-        <h1>Dashboard Admin</h1>
 
-        <div class="card">
-            <h3>Selamat datang Admin 🎓</h3>
-            <p>Kelola sistem akademik di sini</p>
+    <h1 class="title">Dashboard Admin</h1>
+    <p class="subtitle">Sistem Informasi Akademik</p>
+
+    <div class="welcome-box">
+        👋 Selamat datang, Admin
+    </div>
+
+    <div class="cards">
+        <div class="card-box">
+            <h3>👨‍🎓 Mahasiswa</h3>
+            <p>120</p>
         </div>
 
+        <div class="card-box">
+            <h3>📚 Mata Kuliah</h3>
+            <p>25</p>
+        </div>
     </div>
 
 </div>
-
-</body>
-</html>
